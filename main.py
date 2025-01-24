@@ -69,7 +69,7 @@ import matplotlib.pyplot as plt
 
 plt.plot(h.history["loss"])
 plt.title("Loss Curve")
-plt.savefig("loss.png")
+plt.savefig("loss_curve.png")
 plt.show()
 
 
