@@ -6,7 +6,7 @@ import tqdm
 
 
 df = pd.read_csv(
-    "C:\\Users\\jamie\\Documents\\essential-coding-skills\\extra\\data.csv"
+    "extra/data.csv"
 )
 x = df.iloc[:, 1:-1]
 lbls = df.iloc[:, -1]
