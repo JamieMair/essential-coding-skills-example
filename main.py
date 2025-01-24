@@ -61,7 +61,15 @@ m.add(Dense(3, activation="softmax"))
 
 m.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-h = m.fit(xtrain, ytrain, epochs=30, batch_size=15, verbose=0)
+history = 
+    m.fit(
+        xtrain,
+        ytrain,
+        epochs=30,
+        batch_size=15,
+        verbose=0)
+
+print(xtrain)
 
 print("Finished training!")
 
