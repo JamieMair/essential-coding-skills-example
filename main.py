@@ -31,15 +31,15 @@ x = x.sample(frac=1)
 lbls = x.iloc[:, -1]
 x = x.iloc[:, 1:-1]
 
-xtrain = x[:130]
-ytrain = lbls[:130]
+x_train = x[:130]
+y_train = lbls[:130]
 
 print("X train:")
-print(xtrain)
+print(x_train)
 
-ytrain = pd.get_dummies(ytrain).values
+y_train = pd.get_dummies(y_train).values
 print("Y train:")
-print(ytrain)
+print(y_train)
 
 
 import keras
@@ -61,15 +61,7 @@ m.add(Dense(3, activation="softmax"))
 
 m.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-history = 
-    m.fit(
-        xtrain,
-        ytrain,
-        epochs=30,
-        batch_size=15,
-        verbose=0)
-
-print(xtrain)
+h = m.fit(x_train, y_train, epochs=30, batch_size=15, verbose=0)
 
 print("Finished training!")
 
@@ -77,7 +69,7 @@ import matplotlib.pyplot as plt
 
 plt.plot(h.history["loss"])
 plt.title("Loss Curve")
-plt.savefig("loss.png")
+plt.savefig("loss_curve.png")
 plt.show()
 
 
